@@ -10,8 +10,8 @@ Output: 5->4->3->2->1->NULL
 */
 
 /*  1.ITERATIVE APPROACH
- *  time comlexity :o(n)
- *  space complexity : o(1)
+ *  time comlexity :O(n)
+ *  space complexity : O(1)
  *  */
 
 
@@ -27,13 +27,13 @@ class Solution {
     public ListNode reverseList(ListNode head) {
         ListNode current = head;
         ListNode previous = null;
-        ListNode Next;
+        ListNode nextNode;
         while(current !=null)
         {
-            Next = current.next;
+            nextNode = current.next;
             current.next = previous;
             previous = current;
-            current = Next;
+            current = nextNode;
 
         }
         head = previous;
