@@ -1,6 +1,7 @@
 /* QUESTION :
 
-  Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+  Merge two sorted linked lists and return it as a new list. The new list should be made by splicing 
+  together the nodes of the first two lists.
 
 Example:
 
@@ -27,9 +28,14 @@ Space Complexity: O(1)
 
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        //dummy node to simplify code
         ListNode dummy = new ListNode(0);
+      
+        //to keep track of last added node
         ListNode tail = dummy;
-         while(l1 != null && l2 != null){
+        
+        //Loop untill we reach end of any of the list
+        while(l1 != null && l2 != null){
             if(l1.val <= l2.val){
                 tail.next = l1;
                 l1 = l1.next;
@@ -41,12 +47,14 @@ class Solution {
             tail = tail.next;      
         }
         
+        //l1 is shorter than l2
         if(l1 == null) { 
             tail.next = l2;
         }
         else {
             tail.next = l1;
         }
+      
       return dummy.next;
      }
   }
