@@ -41,3 +41,32 @@ class Solution {
     }
 }
 
+/* 2.RECURCIVE APPROACH 
+   Time complexity :O(n)
+   Space complexity :O(1)
+   */
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head)
+    { //ListNode current = head;
+        if(head ==null)
+            return null ;
+        else if(head.next == null)
+            return head;
+        ListNode nextNode = head.next;
+        head.next = null;
+        ListNode remain = reverseList(nextNode);
+        nextNode.next = head;
+        return remain;
+    }
+}
+
