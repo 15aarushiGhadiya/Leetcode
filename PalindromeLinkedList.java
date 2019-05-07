@@ -12,7 +12,7 @@ Input: 1->2->2->1
 Output: true  */
 
 /* SOLUTION: 1.By reversing second half of linkedlist and then comparing it with other first half.
-Time Complexity: O(n)
+Time Complexity: O(n) */
 
 
 /**
